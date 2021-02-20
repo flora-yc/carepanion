@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoMono",
     position: "absolute",
     zIndex: 2,
-    fontSize: 30,
+    fontSize: 15,
   },
 });
 
