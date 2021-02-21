@@ -35,8 +35,8 @@ export default function Homepage() {
   return (
     <View style={styles.container}>
       <Header />
-      <AntDesign style = {{bottom: 30, left: 5}}name="calendar" size={40} color="#7271C1"/>
-      <View style={{flex: 1,  flexDirection: 'row', bottom: 30}}>
+      <AntDesign style = {{bottom: 35, marginLeft: 10}}name="calendar" size={40} color="#7271C1" />
+      <View style={{flex: 1,  flexDirection: 'row', bottom: 30, marginLeft:10, marginRight: 10, justifyContent:'space-between'}}>
 
       <TouchableOpacity  onPress={() => {
         setActionTriggered('ACTION_1');
