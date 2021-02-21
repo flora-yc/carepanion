@@ -4,7 +4,7 @@ import { useFonts } from "expo-font";
 import Header from "../../components/Header/Header"
 import CategoryButton from "../../components/CategoryButton/CategoryButton"
 
-const GreetingScreen = () => {
+const GreetingScreen = (props) => {
     let [fontsLoaded] = useFonts({
         RobotoMonoItalic: require("../../assets/fonts/RobotoMono-BoldItalic.ttf"),
     });
@@ -22,7 +22,8 @@ const GreetingScreen = () => {
                             <CategoryButton
                             style={styles.icon}
                             imgName={"generalIcon.png"}
-                            navigateTo={"@TODO-CHRISTINE"}
+                            navigateTo={"HomepageStack"}
+                            navigation={ props.navigation }
                             />  
                         </View>
                         <View style={styles.iconWrap}>
@@ -30,7 +31,8 @@ const GreetingScreen = () => {
                             <CategoryButton
                             style={styles.icon}
                             imgName={"anxietyIcon.png"}
-                            navigateTo={"@TODO-CHRISTINE"}
+                            navigateTo={"HomepageStack"}
+                            navigation={ props.navigation }
                             />  
                         </View>
                     </View>
@@ -40,7 +42,8 @@ const GreetingScreen = () => {
                             <CategoryButton
                             style={styles.icon}
                             imgName={"selfEsteem.png"}
-                            navigateTo={"@TODO-CHRISTINE"}
+                            navigateTo={"HomepageStack"}
+                            navigation={ props.navigation }
                             />  
                         </View>
                         <View style={styles.iconWrap}>
@@ -48,7 +51,8 @@ const GreetingScreen = () => {
                             <CategoryButton
                             style={styles.icon}
                             imgName={"negativityIcon.png"}
-                            navigateTo={"@TODO-CHRISTINE"}
+                            navigateTo={"HomepageStack"}
+                            navigation={ props.navigation }
                             />  
                         </View>
                     </View>    

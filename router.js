@@ -1,5 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import GreetingScreen from "./screens/GreetingScreen/GreetingScreen";
 import Homepage from "./screens/Homepage/Homepage";
 import CalendarScreen from "./screens/CalendarScreen/CalendarScreen";
 import MoodCheckInScreen from "./screens/CheckInScreen/MoodCheckInScreen";
@@ -43,7 +44,12 @@ export default function Router({ token }) {
       }}
     >
       <AppStack.Screen
-        name="HomepageStackScreen"
+        name="Greeting"
+        component={ GreetingScreen }
+        options={{ title: "Greeting" }}
+      />
+      <AppStack.Screen
+        name="HomepageStack"
         component={ HomepageStackScreen }
         options={{ title: "Homepage" }}
       />
