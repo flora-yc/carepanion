@@ -16,6 +16,8 @@ import IconButtonMe from "../../components/IconButton/IconButtonMe";
 import IconButtonB from "../../components/IconButton/IconButtonB";
 
 import Header from "../../components/Header/Header";
+
+import { showMessage, hideMessage } from "react-native-flash-message";
 import {
   CalendarDate,
   CalendarDateToday,
@@ -236,6 +238,37 @@ export default function Homepage(props) {
             />
           </View>
         </View>
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            bottom: -60,
+            backgroundColor: "#9492D9",
+            borderRadius: 50,
+            padding: 9.5,
+          }}
+          onPress={() => {
+            /* HERE WE GONE SHOW OUR FIRST MESSAGE */
+            showMessage({
+              message: "",
+              description: "Hey! Did you stay hydrated today? :)",
+              type: "default",
+              textStyle: {
+                fontFamily: "RobotoMono",
+                fontSize: 20,
+                lineHeight: 30,
+              },
+              backgroundColor: "#9492D9",
+            });
+          }}
+        >
+          <Image
+            style={{
+              width: 40,
+              height: 40,
+            }}
+            source={require("../../assets/loadingScreenLogo.png")}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
