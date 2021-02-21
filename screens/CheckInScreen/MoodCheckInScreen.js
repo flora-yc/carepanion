@@ -37,7 +37,7 @@ const MoodCheckInScreen = ({ navigation }) => {
         style={styles.container}
       >
         <Image
-          style={{ top: -280 }}
+          style={{ top: -285 }}
           source={require("../../assets/headerCheckIn.png")}
         />
         <TouchableOpacity

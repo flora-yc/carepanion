@@ -43,7 +43,7 @@ const WaterCheckInScreen = ({ navigation }) => {
         style={styles.container}
       >
         <Image
-          style={{ top: -280 }}
+          style={{ top: -290 }}
           source={require("../../assets/headerCheckIn.png")}
         />
         <TouchableOpacity
