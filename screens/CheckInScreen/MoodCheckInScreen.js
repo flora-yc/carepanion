@@ -16,7 +16,7 @@ import {
 import { useFonts } from "expo-font";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
-const MoodCheckInScreen = () => {
+const MoodCheckInScreen = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
     RobotoMonoItalic: require("../../assets/fonts/RobotoMono-BoldItalic.ttf"),
     RobotoMonoBold: require("../../assets/fonts/RobotoMono-Bold.ttf"),
@@ -40,7 +40,10 @@ const MoodCheckInScreen = () => {
           style={{ top: -275 }}
           source={require("../../assets/headerCheckIn.png")}
         />
-        <TouchableOpacity style={{ position: "absolute", top: 40, left: 25 }}>
+        <TouchableOpacity
+          style={{ position: "absolute", top: 40, left: 25 }}
+          onPress={() => navigation.goBack()}
+        >
           <AntDesign name="arrowleft" size={25} color={"#9492D9"} />
         </TouchableOpacity>
         <Text style={styles.title}>Mood</Text>
