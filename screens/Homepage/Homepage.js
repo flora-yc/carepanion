@@ -9,7 +9,7 @@ import {CalendarPopup} from "../../components/Component/CalendarPopup.js";
 import { AntDesign } from '@expo/vector-icons'; 
 import Modal from 'react-native-modal';
 
-export default function Homepage() {
+export default function Homepage(props) {
   const [isModalVisible, setModalVisible] = useState(false);
   
   const toggleModal = () => {
@@ -142,47 +142,53 @@ export default function Homepage() {
               <Text style={styles.iconText}>Water</Text>
               <CategoryButton
               imgName={"waterIcon.png"}
-              navigateTo={"@TODO-CHRISTINE"}
+              navigateTo={"MoodCheckIn"}
+              navigation={ props.navigation }
               />  
           </View>
           <View style={styles.iconWrap}>
               <Text style={styles.iconText}>Exercise</Text>
               <CategoryButton
               imgName={"exerciseIcon.png"}
-              navigateTo={"@TODO-CHRISTINE"}
+              navigateTo={"MoodCheckIn"}
+              navigation={ props.navigation }
               />  
           </View>
         </View>
         <View style={styles.iconRow}>
             <View style={styles.iconWrap}>
-                <Text style={styles.iconText}>Sleep</Text>
-                <CategoryButton
-                imgName={"sleepIcon.png"}
-                navigateTo={"@TODO-CHRISTINE"}
-                />  
+              <Text style={styles.iconText}>Sleep</Text>
+              <CategoryButton
+              imgName={"sleepIcon.png"}
+              navigateTo={"MoodCheckIn"}
+              navigation={ props.navigation }
+              />  
             </View>
             <View style={styles.iconWrap}>
-                <Text style={styles.iconText}>Mood</Text>
-                <CategoryButton
-                imgName={"moodIcon.png"}
-                navigateTo={"@TODO-CHRISTINE"}
-                />  
+              <Text style={styles.iconText}>Mood</Text>
+              <CategoryButton
+              imgName={"moodIcon.png"}
+              navigateTo={"MoodCheckIn"}
+              navigation={ props.navigation }
+              />  
             </View>
         </View>
         <View style={styles.iconRow}>
             <View style={styles.iconWrap}>
-                <Text style={styles.iconText}>Medication</Text>
-                <CategoryButton
-                imgName={"medication.png"}
-                navigateTo={"@TODO-CHRISTINE"}
-                />  
+              <Text style={styles.iconText}>Medication</Text>
+              <CategoryButton
+              imgName={"medication.png"}
+              navigateTo={"MoodCheckIn"}
+              navigation={ props.navigation }
+              />  
             </View>
             <View style={styles.iconWrap}>
-                <Text style={styles.iconText}>Break</Text>
-                <CategoryButton
-                imgName={"breakIcon.png"}
-                navigateTo={"@TODO-CHRISTINE"}
-                />  
+              <Text style={styles.iconText}>Break</Text>
+              <CategoryButton
+              imgName={"breakIcon.png"}
+              navigateTo={"MoodCheckIn"}
+              navigation={ props.navigation }
+              />  
             </View>
         </View>
       </View>
