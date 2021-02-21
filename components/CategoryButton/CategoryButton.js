@@ -26,12 +26,13 @@ function CategoryButton(props) {
         >
           <Image
             style={styles.image}
-            source={require(`../../assets/${ props.imgName }`)}
+            source={require("../../assets/moodIcon.png")}
           />
         </TouchableOpacity>
       </View>
     );
   }
+  
 }
 
 const styles = StyleSheet.create({

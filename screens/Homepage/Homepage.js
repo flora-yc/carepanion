@@ -227,14 +227,13 @@ const styles = StyleSheet.create({
   // ICON STYLES
   iconContainer: {
     width: "100%",
-    height: "80%",
-    backgroundColor: "#F6F7FF",
+    height: "45%",
     alignItems: "center",
+    bottom: 90
   },
   iconRow: {
     flex: 1,
     flexDirection: "row",
-    width: "80%",
     alignItems: 'stretch',
     justifyContent: 'space-around'
   },
@@ -247,7 +246,7 @@ const styles = StyleSheet.create({
     color: "#9492D9",
     fontSize: 15,
     position: "absolute",
-    top: -22,
+    top: -8,
   },
 
 });
