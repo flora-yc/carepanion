@@ -91,7 +91,7 @@ const MoodCheckInScreen = ({ navigation }) => {
         </View>
         <TouchableOpacity
           style={styles.update}
-          onPress={() => Alert.alert("hi")}
+          onPress={() => navigation.goBack()}
         >
           <Text
             style={{
