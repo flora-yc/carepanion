@@ -10,9 +10,11 @@ import {
   Alert,
   TouchableWithoutFeedback,
   Keyboard,
+  ScrollView,
+  Dimensions,
 } from "react-native";
 import { useFonts } from "expo-font";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
 const MoodCheckInScreen = () => {
   let [fontsLoaded] = useFonts({
@@ -29,65 +31,89 @@ const MoodCheckInScreen = () => {
     return null;
   } else {
     return (
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss()}>
-        <View style={styles.container}>
-          <Image source={require("../../assets/headerCheckIn.png")} />
-          <Text style={styles.title}>Mood</Text>
-          <Image
-            style={styles.icon}
-            source={require("../../assets/moodIcon.png")}
-          />
-          <TextInput
-            placeholder="How are you feeling today?"
-            multiline
-            value={textInput}
-            style={styles.textInput}
-            onChangeText={(text) => setTextInput(text)}
-          />
-          <View style={styles.emotions}>
-            <TouchableOpacity onPress={() => setIsPress1(!isPress1)}>
-              <MaterialCommunityIcons
-                name="emoticon-happy-outline"
-                size={75}
-                color={isPress1 ? "#9492D9" : "#C8C7EF"}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setIsPress2(!isPress2)}>
-              <MaterialCommunityIcons
-                name="emoticon-sad-outline"
-                size={75}
-                color={isPress2 ? "#9492D9" : "#C8C7EF"}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setIsPress3(!isPress3)}>
-              <MaterialCommunityIcons
-                name="emoticon-neutral-outline"
-                size={75}
-                color={isPress3 ? "#9492D9" : "#C8C7EF"}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setIsPress4(!isPress4)}>
-              <MaterialCommunityIcons
-                name="emoticon-angry-outline"
-                size={75}
-                color={isPress4 ? "#9492D9" : "#C8C7EF"}
-              />
-            </TouchableOpacity>
-          </View>
-          <Button title="Update" onPress={() => Alert.alert("hi")} />
+      <ScrollView
+        keyboardShouldPersistTaps={"handled"}
+        contentContainerStyle={styles.scroll}
+        style={styles.container}
+      >
+        <Image
+          style={{ top: -275 }}
+          source={require("../../assets/headerCheckIn.png")}
+        />
+        <TouchableOpacity style={{ position: "absolute", top: 40, left: 25 }}>
+          <AntDesign name="arrowleft" size={25} color={"#9492D9"} />
+        </TouchableOpacity>
+        <Text style={styles.title}>Mood</Text>
+        <Image
+          style={styles.icon}
+          source={require("../../assets/moodIcon.png")}
+        />
+        <TextInput
+          multiline
+          value={textInput}
+          style={styles.textInput}
+          onChangeText={(text) => setTextInput(text)}
+          placeholderTextColor="#C8C7EF"
+          placeholder="How are you feeling today?"
+        />
+        <View style={styles.emotions}>
+          <TouchableOpacity onPress={() => setIsPress1(!isPress1)}>
+            <MaterialCommunityIcons
+              name="emoticon-happy-outline"
+              size={70}
+              color={isPress1 ? "#9492D9" : "#C8C7EF"}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsPress2(!isPress2)}>
+            <MaterialCommunityIcons
+              name="emoticon-sad-outline"
+              size={70}
+              color={isPress2 ? "#9492D9" : "#C8C7EF"}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsPress3(!isPress3)}>
+            <MaterialCommunityIcons
+              name="emoticon-neutral-outline"
+              size={70}
+              color={isPress3 ? "#9492D9" : "#C8C7EF"}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsPress4(!isPress4)}>
+            <MaterialCommunityIcons
+              name="emoticon-angry-outline"
+              size={70}
+              color={isPress4 ? "#9492D9" : "#C8C7EF"}
+            />
+          </TouchableOpacity>
         </View>
-      </TouchableWithoutFeedback>
+        <TouchableOpacity
+          style={styles.update}
+          onPress={() => Alert.alert("hi")}
+        >
+          <Text
+            style={{
+              fontFamily: "RobotoMonoBold",
+              fontSize: 24,
+              color: "#9492D9",
+            }}
+          >
+            Update
+          </Text>
+        </TouchableOpacity>
+        {/* <Button
+          styles={styles.update}
+          title="Update"
+          onPress={() => Alert.alert("hi")}
+        /> */}
+      </ScrollView>
     );
   }
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#F6F7FF",
-    alignItems: "center",
     position: "relative",
-    // justifyContent: "center",
   },
   title: {
     marginTop: 90,
@@ -106,27 +132,34 @@ const styles = StyleSheet.create({
     height: 45,
   },
   textInput: {
-    // marginTop: 20,
-    // fontFamily: "RobotoMonoBold",
-    // fontSize: 26,
-    // width: "82%",
-    // height: "35%",
-    // textAlign: "left",
-    // position: "relative",
-    // color: "#C8C7EF",
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 1,
+    fontFamily: "RobotoMonoBold",
+    fontSize: 26,
+    width: "82%",
+    height: "80%",
+    textAlign: "left",
+    color: "#9492D9",
+    position: "absolute",
+    bottom: -48,
   },
   emotions: {
-    flex: 1,
     flexDirection: "row",
-    height: 40,
+    top: 50,
   },
   update: {
     position: "absolute",
-    bottom: 40,
-    zIndex: 3,
+    backgroundColor: "#FFF",
+    bottom: 150,
+    paddingHorizontal: 30,
+    paddingVertical: 15,
+    borderWidth: 3,
+    borderColor: "#E9EBFC",
+    borderRadius: 15,
+  },
+  scroll: {
+    backgroundColor: "#F6F7FF",
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
