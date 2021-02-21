@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import { Button, StyleSheet, Text, View, TouchableOpacity, Modal } from "react-native";
+import { Button, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import moment from "moment";
 import CategoryIcon from "../../components/CategoryIcon/CategoryIcon";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import Header from "../../components/Header/Header";
 import {CalendarDate, CalendarDateToday} from "../../components/Component/CalendarDate.js";
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'; 
+import Modal from 'react-native-modal';
 
 export default function Homepage() {
   const [isModalVisible, setModalVisible] = useState(false);
