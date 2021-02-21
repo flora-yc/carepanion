@@ -10,7 +10,7 @@ import { AntDesign } from '@expo/vector-icons';
 import Modal from 'react-native-modal';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
-export default function CalendarScreen() {
+export default function CalendarScreen({ navigation }) {
 
   const [actionTriggered, setActionTriggered] = useState(''); 
   const [isModalVisible, setModalVisible] = useState(false);
@@ -39,7 +39,10 @@ export default function CalendarScreen() {
                <Button title="Hide" onPress={toggleModal}  color="#fff" style={styles.button}/>
              </View> : null}
       </Modal>
-      <TouchableOpacity style = {{  position: "absolute", top: 40, left: 25}}>
+      <TouchableOpacity
+        style = {{  position: "absolute", top: 40, left: 25}}
+        onPress={() => navigation.goBack()}
+      >
       <AntDesign name="arrowleft" size={25} color="#9492D9" /> 
         </TouchableOpacity>
       </View>

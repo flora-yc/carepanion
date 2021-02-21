@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Homepage from "./screens/Homepage/Homepage";
+import CalendarScreen from "./screens/CalendarScreen/CalendarScreen";
 import MoodCheckInScreen from "./screens/CheckInScreen/MoodCheckInScreen";
 
 
@@ -17,6 +18,11 @@ function HomepageStackScreen() {
         name="Homepage"
         component={ Homepage }
         options={{ title: "Homepage" }}
+      />
+      <HomepageStack.Screen
+        name="Calendar"
+        component={ CalendarScreen }
+        options={{ title: "Calendar" }}
       />
       <HomepageStack.Screen
         name="MoodCheckIn"

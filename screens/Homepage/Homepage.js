@@ -35,7 +35,7 @@ export default function Homepage(props) {
   return (
     <View style={styles.container}>
       <Header />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate("Calendar")}>
       <AntDesign style = {{bottom: 35, marginLeft: 10}}name="calendar" size={40} color="#7271C1" />
       </TouchableOpacity>
       <View style={{flex: 1,  flexDirection: 'row', bottom: 30, marginLeft:10, marginRight: 10, justifyContent:'space-between'}}>
