@@ -5,6 +5,7 @@ import CategoryIcon from "../../components/CategoryIcon/CategoryIcon";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import Header from "../../components/Header/Header";
 import {CalendarDate, CalendarDateToday} from "../../components/Component/CalendarDate.js";
+import {CalendarPopup} from "../../components/Component/CalendarPopup.js";
 import { AntDesign } from '@expo/vector-icons'; 
 import Modal from 'react-native-modal';
 
@@ -43,7 +44,6 @@ export default function Homepage() {
         toggleModal}}>
         <CalendarDate dayOfTheWeek = {dayOne} number = {dayOneNum}/>
       </TouchableOpacity >
-
 
       <TouchableOpacity  onPress={() => {
         setActionTriggered('ACTION_2');
@@ -91,38 +91,44 @@ export default function Homepage() {
 
       {actionTriggered === 'ACTION_1' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
-          <Text style={styles.textNotDate}>{dayOne}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <CalendarPopup date={dayOne}/>
+            <Button title="Hide" onPress={toggleModal}  color="#fff" style={styles.button}/>
           </View> :
           actionTriggered === 'ACTION_2' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
+            <CalendarPopup date={dayTwo}/>
           <Text style={styles.textNotDate}>{dayTwo}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Hide" onPress={toggleModal} color="#fff"/>
           </View> :
           actionTriggered === 'ACTION_3' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
+            <CalendarPopup date={dayThree}/>
           <Text style={styles.textNotDate}>{dayThree}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Hide" onPress={toggleModal} color="#fff"/>
           </View> :
           actionTriggered === 'ACTION_4' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
+            <CalendarPopup date={weekdayName}/>
           <Text style={styles.textNotDate}>{weekdayName}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Hide" onPress={toggleModal} color="#fff"/>
           </View> :
           actionTriggered === 'ACTION_5' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
+            <CalendarPopup date={dayFive}/>
           <Text style={styles.textNotDate}>{dayFive}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Hide" onPress={toggleModal} color="#fff" />
           </View> :
           actionTriggered === 'ACTION_6' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
+            <CalendarPopup date={daySix}/>
           <Text style={styles.textNotDate}>{daySix}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Hide" onPress={toggleModal} color="#fff"/>
           </View> :
           actionTriggered === 'ACTION_7' ?
           <View style={{flex: 1, alignItems: 'center', position: 'center'}}>
+            <CalendarPopup date={daySeven}/>
           <Text style={styles.textNotDate}>{daySeven}</Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Hide" onPress={toggleModal} color="#fff"/>
           </View> :
 
             null}
@@ -140,6 +146,11 @@ const styles = StyleSheet.create({
     alignItems: 'stretch'
     // alignItems: "center",
     // justifyContent: "center",
+  },
+  button: {
+    bottom: 150,
+    alignItems: "center",
+    justifyContent: "center",
   },
   rectangle: {
     width: 50 * 2,
