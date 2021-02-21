@@ -10,7 +10,7 @@ import {
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
-function CategoryButton(props) {
+function CategoryButtonN(props) {
   let [fontsLoaded] = useFonts({
     RobotoMono: require("../../assets/fonts/RobotoMono-Bold.ttf"),
   });
@@ -26,7 +26,7 @@ function CategoryButton(props) {
         >
           <Image
             style={styles.image}
-            source={require("../../assets/generalIcon.png")}
+            source={require("../../assets/negativityIcon.png")}
           />
         </TouchableOpacity>
       </View>
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CategoryButton;
+export default CategoryButtonN;

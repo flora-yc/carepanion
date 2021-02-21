@@ -14,9 +14,13 @@ import {
   Dimensions,
 } from "react-native";
 import { useFonts } from "expo-font";
-import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+import {
+  MaterialCommunityIcons,
+  AntDesign,
+  Ionicons,
+} from "@expo/vector-icons";
 
-const MoodCheckInScreen = ({ navigation }) => {
+const WaterCheckInScreen = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
     RobotoMonoItalic: require("../../assets/fonts/RobotoMono-BoldItalic.ttf"),
     RobotoMonoBold: require("../../assets/fonts/RobotoMono-Bold.ttf"),
@@ -26,6 +30,8 @@ const MoodCheckInScreen = ({ navigation }) => {
   var [isPress2, setIsPress2] = React.useState(false);
   var [isPress3, setIsPress3] = React.useState(false);
   var [isPress4, setIsPress4] = React.useState(false);
+  var [isPress5, setIsPress5] = React.useState(false);
+  var [isPress6, setIsPress6] = React.useState(false);
 
   if (!fontsLoaded) {
     return null;
@@ -46,10 +52,10 @@ const MoodCheckInScreen = ({ navigation }) => {
         >
           <AntDesign name="arrowleft" size={25} color={"#9492D9"} />
         </TouchableOpacity>
-        <Text style={styles.title}>Mood</Text>
-        <MaterialCommunityIcons
+        <Text style={styles.title}>Water</Text>
+        <Ionicons
           style={styles.icon}
-          name="emoticon-happy-outline"
+          name="ios-water"
           size={40}
           color={"#9492D9"}
         />
@@ -59,35 +65,49 @@ const MoodCheckInScreen = ({ navigation }) => {
           style={styles.textInput}
           onChangeText={(text) => setTextInput(text)}
           placeholderTextColor="#C8C7EF"
-          placeholder="How are you feeling today?"
+          placeholder="How are you staying hydrated today?"
         />
         <View style={styles.emotions}>
           <TouchableOpacity onPress={() => setIsPress1(!isPress1)}>
-            <MaterialCommunityIcons
-              name="emoticon-happy-outline"
-              size={65}
+            <Ionicons
+              name="ios-water"
+              size={50}
               color={isPress1 ? "#9492D9" : "#C8C7EF"}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setIsPress2(!isPress2)}>
-            <MaterialCommunityIcons
-              name="emoticon-sad-outline"
-              size={65}
+            <Ionicons
+              name="ios-water"
+              size={50}
               color={isPress2 ? "#9492D9" : "#C8C7EF"}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setIsPress3(!isPress3)}>
-            <MaterialCommunityIcons
-              name="emoticon-neutral-outline"
-              size={65}
+            <Ionicons
+              name="ios-water"
+              size={50}
               color={isPress3 ? "#9492D9" : "#C8C7EF"}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setIsPress4(!isPress4)}>
-            <MaterialCommunityIcons
-              name="emoticon-angry-outline"
-              size={65}
+            <Ionicons
+              name="ios-water"
+              size={50}
               color={isPress4 ? "#9492D9" : "#C8C7EF"}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsPress5(!isPress5)}>
+            <Ionicons
+              name="ios-water"
+              size={50}
+              color={isPress5 ? "#9492D9" : "#C8C7EF"}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsPress6(!isPress6)}>
+            <Ionicons
+              name="ios-water"
+              size={50}
+              color={isPress6 ? "#9492D9" : "#C8C7EF"}
             />
           </TouchableOpacity>
         </View>
@@ -133,8 +153,8 @@ const styles = StyleSheet.create({
     opacity: 0.5,
     position: "absolute",
     top: 115,
-    width: 45,
-    height: 45,
+    // width: 45,
+    // height: 45,
   },
   textInput: {
     fontFamily: "RobotoMonoBold",
@@ -168,4 +188,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MoodCheckInScreen;
+export default WaterCheckInScreen;
