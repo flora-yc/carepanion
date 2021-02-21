@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 import React, {useState} from 'react';
 import {  Button, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import moment from "moment";
 import CategoryIcon from "../../components/CategoryIcon/CategoryIcon";
-=======
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
->>>>>>> baa1191fe9f976f9b05e2c306c4828dfe7cbf6de
 import Header from "../../components/Header/Header";
 import {CalendarDate, CalendarDateToday} from "../../components/Component/CalendarDate.js";
 import { AntDesign } from '@expo/vector-icons'; 
@@ -39,7 +36,6 @@ export default function Homepage() {
   return (
     <View style={styles.container}>
       <Header />
-<<<<<<< HEAD
       <AntDesign style = {{bottom: 30, left: 5}}name="calendar" size={40} color="#7271C1"/>
       <View style={{flex: 1,  flexDirection: 'row', bottom: 30}}>
 
@@ -140,10 +136,8 @@ export default function Homepage() {
       <CategoryIcon src="generalIcon.png" />
       <CategoryIcon src="medication.png" />
       <CategoryIcon src="negativity.png" />
-=======
       <CategoryButton title="Mood" />
       <Text>Open up Homepage.js to start working on your app!</Text>
->>>>>>> baa1191fe9f976f9b05e2c306c4828dfe7cbf6de
     </View>
   );
 }
