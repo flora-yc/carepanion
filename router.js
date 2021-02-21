@@ -4,6 +4,7 @@ import GreetingScreen from "./screens/GreetingScreen/GreetingScreen";
 import Homepage from "./screens/Homepage/Homepage";
 import CalendarScreen from "./screens/CalendarScreen/CalendarScreen";
 import MoodCheckInScreen from "./screens/CheckInScreen/MoodCheckInScreen";
+import WaterCheckInScreen from "./screens/CheckInScreen/WaterCheckInScreen";
 
 
 function HomepageStackScreen() {
@@ -29,6 +30,11 @@ function HomepageStackScreen() {
         name="MoodCheckIn"
         component={ MoodCheckInScreen }
         options={{ title: "Mood Check In" }}
+      />
+      <HomepageStack.Screen
+        name="WaterCheckIn"
+        component={ WaterCheckInScreen }
+        options={{ title: "Water Check In" }}
       />
     </HomepageStack.Navigator>
   );

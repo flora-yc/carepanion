@@ -192,7 +192,7 @@ export default function Homepage(props) {
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Water</Text>
             <IconButtonW
-              navigateTo={"MoodCheckIn"}
+              navigateTo={"WaterCheckIn"}
               navigation={props.navigation}
             />
           </View>
