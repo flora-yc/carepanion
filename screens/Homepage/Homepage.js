@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Button, StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import moment from "moment";
 import CategoryIcon from "../../components/CategoryIcon/CategoryIcon";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
@@ -133,15 +133,63 @@ export default function Homepage() {
 
             null}
       </Modal>
-
       </View>
-      <CategoryIcon src="sleepIcon.png" />
-      <CategoryIcon src="breakIcon.png" />
-      <CategoryIcon src="generalIcon.png" />
-      <CategoryIcon src="medication.png" />
-      <CategoryIcon src="negativity.png" />
-      <CategoryButton title="Mood" />
+      
+    {/* ICON CONTAINERS */}
+      <View style={styles.iconContainer}>
+        <View style={styles.iconRow}>
+          <View style={styles.iconWrap}>
+              <Text style={styles.iconText}>Water</Text>
+              <CategoryButton
+              imgName={"waterIcon.png"}
+              navigateTo={"@TODO-CHRISTINE"}
+              />  
+          </View>
+          <View style={styles.iconWrap}>
+              <Text style={styles.iconText}>Exercise</Text>
+              <CategoryButton
+              imgName={"exerciseIcon.png"}
+              navigateTo={"@TODO-CHRISTINE"}
+              />  
+          </View>
+        </View>
+        <View style={styles.iconRow}>
+            <View style={styles.iconWrap}>
+                <Text style={styles.iconText}>Sleep</Text>
+                <CategoryButton
+                imgName={"sleepIcon.png"}
+                navigateTo={"@TODO-CHRISTINE"}
+                />  
+            </View>
+            <View style={styles.iconWrap}>
+                <Text style={styles.iconText}>Mood</Text>
+                <CategoryButton
+                imgName={"moodIcon.png"}
+                navigateTo={"@TODO-CHRISTINE"}
+                />  
+            </View>
+        </View>
+        <View style={styles.iconRow}>
+            <View style={styles.iconWrap}>
+                <Text style={styles.iconText}>Medication</Text>
+                <CategoryButton
+                imgName={"medication.png"}
+                navigateTo={"@TODO-CHRISTINE"}
+                />  
+            </View>
+            <View style={styles.iconWrap}>
+                <Text style={styles.iconText}>Break</Text>
+                <CategoryButton
+                imgName={"breakIcon.png"}
+                navigateTo={"@TODO-CHRISTINE"}
+                />  
+            </View>
+        </View>
+      </View>
     </View>
+
+
+    
   );
 }
 
@@ -175,5 +223,32 @@ const styles = StyleSheet.create({
     fontSize: 15,
     top: -15
   },
+
+  // ICON STYLES
+  iconContainer: {
+    width: "100%",
+    height: "80%",
+    backgroundColor: "#F6F7FF",
+    alignItems: "center",
+  },
+  iconRow: {
+    flex: 1,
+    flexDirection: "row",
+    width: "80%",
+    alignItems: 'stretch',
+    justifyContent: 'space-around'
+  },
+  iconWrap: {
+    alignItems: "center",
+    width: "40%"
+  },
+  iconText: {
+    fontFamily: "RobotoMono",
+    color: "#9492D9",
+    fontSize: 15,
+    position: "absolute",
+    top: -22,
+  },
+
 });
 
