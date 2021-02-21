@@ -22,7 +22,7 @@ function CategoryButton(props) {
         <Text style={styles.title}>{props.title}</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate(props.navigateTo)}
+          onPress={() => props.navigation.navigate(props.navigateTo)}
         >
           <Image
             style={styles.image}
