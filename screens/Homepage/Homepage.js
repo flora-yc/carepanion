@@ -8,8 +8,13 @@ import {
   Image,
 } from "react-native";
 import moment from "moment";
-import CategoryIcon from "../../components/CategoryIcon/CategoryIcon";
-import CategoryButton from "../../components/CategoryButton/CategoryButton";
+import IconButtonW from "../../components/IconButton/IconButtonW";
+import IconButtonE from "../../components/IconButton/IconButtonE";
+import IconButtonS from "../../components/IconButton/IconButtonS";
+import IconButtonM from "../../components/IconButton/IconButtonM";
+import IconButtonMe from "../../components/IconButton/IconButtonMe";
+import IconButtonB from "../../components/IconButton/IconButtonB";
+
 import Header from "../../components/Header/Header";
 import {
   CalendarDate,
@@ -186,16 +191,14 @@ export default function Homepage(props) {
         <View style={styles.iconRow}>
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Water</Text>
-            <CategoryButton
-              imgName={"waterIcon.png"}
+            <IconButtonW
               navigateTo={"MoodCheckIn"}
               navigation={props.navigation}
             />
           </View>
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Exercise</Text>
-            <CategoryButton
-              imgName={"exerciseIcon.png"}
+            <IconButtonE
               navigateTo={"MoodCheckIn"}
               navigation={props.navigation}
             />
@@ -204,16 +207,14 @@ export default function Homepage(props) {
         <View style={styles.iconRow}>
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Sleep</Text>
-            <CategoryButton
-              imgName={"sleepIcon.png"}
+            <IconButtonS
               navigateTo={"MoodCheckIn"}
               navigation={props.navigation}
             />
           </View>
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Mood</Text>
-            <CategoryButton
-              imgName={"moodIcon.png"}
+            <IconButtonM
               navigateTo={"MoodCheckIn"}
               navigation={props.navigation}
             />
@@ -222,16 +223,14 @@ export default function Homepage(props) {
         <View style={styles.iconRow}>
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Medication</Text>
-            <CategoryButton
-              imgName={"medication.png"}
+            <IconButtonMe
               navigateTo={"MoodCheckIn"}
               navigation={props.navigation}
             />
           </View>
           <View style={styles.iconWrap}>
             <Text style={styles.iconText}>Break</Text>
-            <CategoryButton
-              imgName={"breakIcon.png"}
+            <IconButtonB
               navigateTo={"MoodCheckIn"}
               navigation={props.navigation}
             />
@@ -293,15 +292,8 @@ const styles = StyleSheet.create({
   iconText: {
     fontFamily: "RobotoMono",
     color: "#9492D9",
-    fontSize: 15,
+    fontSize: 17.5,
     position: "absolute",
-    top: -8,
-  },
-  iconButton: {
-    borderWidth: 3,
-    padding: 10,
-    borderRadius: 10,
-    width: 88,
-    borderColor: "#E9EBFC",
+    top: -4,
   },
 });
