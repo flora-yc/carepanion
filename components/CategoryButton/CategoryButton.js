@@ -22,11 +22,11 @@ function CategoryButton(props) {
         <Text style={styles.title}>{props.title}</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("MoodCheckInScreen")}
+          onPress={() => navigation.navigate(props.navigateTo)}
         >
           <Image
             style={styles.image}
-            source={require("../../assets/moodIcon.png")}
+            source={require(`../../assets/${ props.imgName }`)}
           />
         </TouchableOpacity>
       </View>

@@ -129,12 +129,6 @@ export default function Homepage() {
       </Modal>
 
       </View>
-      <CategoryIcon src="sleepIcon.png" />
-      <CategoryIcon src="breakIcon.png" />
-      <CategoryIcon src="generalIcon.png" />
-      <CategoryIcon src="medication.png" />
-      <CategoryIcon src="negativity.png" />
-      <CategoryButton title="Mood" />
     </View>
   );
 }
